@@ -50,9 +50,39 @@ Below are the key features for each module, with examples to illustrate their op
   - *Example:* A form with fields to add processes (e.g., "P1"), resources (e.g., "R1"), and their relationships.
 - **Graph Visualization:** Displays the resource allocation graph, highlighting any detected cycles.
   - *Example:* Shows a diagram with nodes "P1," "R1," "P2," "R2," and red edges forming the cycle P1→R2→P2→R1.
+  - 
+  
 - **Result Display:** Presents analysis outcomes and resolution suggestions in a clear format.
   - *Example:* A message like "Deadlock detected involving P1 and P2. Suggestion: Terminate P1 or P2."
 - **Optional Interaction:** (Stretch goal) Lets users simulate resolution actions and see updated results.
   - *Example:* Button to “terminate P1,” removing its edges and refreshing the graph.
 
 ---
+### 4. Technology Recommendations
+
+Here are the recommended technologies based on ease of use, functionality, and suitability for the project:
+
+- **Programming Language:** Python
+  - *Why:* Python is versatile, easy to learn, and has extensive libraries for graph manipulation, GUI development, and data processing, making it ideal for a project of this scope.
+- **Libraries:**
+  - **NetworkX:** For constructing and analyzing the resource allocation graph, including cycle detection.
+    - *Use Case:* `networkx.find_cycle(graph)` to detect circular waits.
+  - **Tkinter or PyQt:** For building the GUI.
+    - *Use Case:* Tkinter for a simple interface (built into Python) or PyQt for more advanced features.
+  - **Matplotlib (optional with NetworkX):** For enhanced graph visualization.
+    - *Use Case:* Plot the graph with color-coded edges to highlight deadlocks.
+  - **JSON or CSV (standard Python libraries):** For parsing input data files.
+    - *Use Case:* `json.load()` to read a structured input file.
+- **Tools:**
+  - **VSCode:** A lightweight, powerful code editor with Python support and debugging tools.
+  - **Git:** For version control to track changes and manage collaboration if needed.
+  - **Python 3.x:** Ensure the latest version for compatibility with libraries.
+
+This combination allows rapid development while meeting all functional requirements, avoiding the complexity of low-level languages like C++ for a data-driven tool.
+
+---
+### Conculsion and Future Scope
+
+The automation of deadlock detection is a crucial tool in ensuring the smooth functioning of systems where resource sharing among multiple processes takes place. By integrating graph-based cycle detection and resource allocation monitoring, this tool significantly reduces the time and effort needed to identify potential deadlocks in complex systems.
+
+The future scope of an automated deadlock detection tool is vast, with several opportunities to enhance its capabilities and increase its applications. One hopeful direction is the integration of deadlock prevention techniques, where the tool not only detects deadlocks but also provides real-time recommendations to avoid them by adjusting resource allocation.
