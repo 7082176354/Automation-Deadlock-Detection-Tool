@@ -35,7 +35,6 @@ def is_safe_state(processes, available, max_resources, allocation):
     print("The system is in a SAFE state.")
     print(f"Safe sequence: {' -> '.join(safe_sequence)}")
 
-# User Input Section
 num_processes = int(input("Enter the number of processes: "))
 num_resources = int(input("Enter the number of resource types: "))
 
